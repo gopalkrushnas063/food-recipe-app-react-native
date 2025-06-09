@@ -1,22 +1,46 @@
+// app/(tabs)/_layout.tsx
+import { useTheme } from "@/context/ThemeContext";
+import { MaterialIcons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
-import React from "react";
-import { StyleSheet, Text } from "react-native";
 
 const TabLayout = () => {
+  const { colors, isDark } = useTheme();
+
   return (
-    <Tabs screenOptions={{ headerShown: false }}>
+    <Tabs
+      screenOptions={{
+        headerShown: true, // If you want headers in some tab screens
+        headerStyle: {
+          backgroundColor: colors.cardBackground,
+        },
+        headerTitleStyle: {
+          color: colors.text,
+        },
+        headerTintColor: colors.text,
+        tabBarStyle: {
+          backgroundColor: colors.cardBackground,
+          borderTopColor: colors.border,
+        },
+        tabBarActiveTintColor: colors.text,
+        tabBarInactiveTintColor: colors.text,
+      }}
+    >
       <Tabs.Screen
         name="home"
         options={{
           title: "Home",
-          tabBarIcon: ({ color }) => <Text style={{ color }}>🏠</Text>,
+          tabBarIcon: ({ color, size }) => (
+            <MaterialIcons name="home" size={size} color={color} />
+          ),
         }}
       />
       <Tabs.Screen
         name="profile"
         options={{
           title: "Profile",
-          tabBarIcon: ({ color }) => <Text style={{ color }}>👤</Text>,
+          tabBarIcon: ({ color, size }) => (
+            <MaterialIcons name="person" size={size} color={color} />
+          ),
         }}
       />
     </Tabs>
@@ -24,5 +48,3 @@ const TabLayout = () => {
 };
 
 export default TabLayout;
-
-const styles = StyleSheet.create({});

@@ -1,8 +1,11 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-
+import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: "#fff", // or your app background
+  },
+
   mainContainer: {
     flex: 1,
     padding: 20,
@@ -72,12 +75,12 @@ export const styles = StyleSheet.create({
   },
   emptyContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     marginTop: 50,
   },
   emptyText: {
     fontSize: 16,
-    color: '#666',
+    color: "#666",
   },
 });

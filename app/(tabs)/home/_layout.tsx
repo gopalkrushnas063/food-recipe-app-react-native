@@ -1,8 +1,21 @@
 import { Stack } from 'expo-router';
+import { useTheme } from '@/context/ThemeContext';
 
 export default function HomeLayout() {
+  const { colors } = useTheme();
+
   return (
-    <Stack>
+    <Stack
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: colors.cardBackground,
+        },
+        headerTitleStyle: {
+          color: colors.text,
+        },
+        headerTintColor: colors.text,
+      }}
+    >
       <Stack.Screen 
         name="index" 
         options={{ 

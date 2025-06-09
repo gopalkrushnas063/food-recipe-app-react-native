@@ -2,11 +2,11 @@ import { Tabs } from "expo-router";
 import React from "react";
 import { StyleSheet, Text } from "react-native";
 
-const _TabLayouts = () => {
+const TabLayout = () => {
   return (
-    <Tabs screenOptions={{ headerShown: true }}>
+    <Tabs screenOptions={{ headerShown: false }}>
       <Tabs.Screen
-        name="index"
+        name="home"
         options={{
           title: "Home",
           tabBarIcon: ({ color }) => <Text style={{ color }}>🏠</Text>,
@@ -23,6 +23,6 @@ const _TabLayouts = () => {
   );
 };
 
-export default _TabLayouts;
+export default TabLayout;
 
 const styles = StyleSheet.create({});

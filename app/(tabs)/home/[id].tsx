@@ -1,11 +1,10 @@
-import { StyleSheet } from 'react-native';
-import { View } from 'react-native';
-import { useLocalSearchParams } from 'expo-router';
-import { Image } from 'expo-image';
-import { ThemedView } from '@/components/ThemedView';
-import { ThemedText } from '@/components/ThemedText';
-import { mockBooks } from '@/constants/mockData';
-import { useTheme } from '@react-navigation/native';
+import { ThemedText } from "@/components/ThemedText";
+import { ThemedView } from "@/components/ThemedView";
+import { mockBooks } from "@/constants/mockData";
+import { useTheme } from "@react-navigation/native";
+import { Image } from "expo-image";
+import { useLocalSearchParams } from "expo-router";
+import { StyleSheet } from "react-native";
 
 export default function BookDetails() {
   const { id } = useLocalSearchParams<{ id: string }>();
@@ -35,16 +34,11 @@ export default function BookDetails() {
           <ThemedText>No Image</ThemedText>
         </ThemedView>
       )}
-      
+
       <ThemedText style={styles.title}>{book.title}</ThemedText>
       <ThemedText style={styles.author}>By {book.author}</ThemedText>
 
-      <ThemedView 
-        style={[
-          styles.detailsContainer, 
-          { backgroundColor: colors.background }
-        ]}
-      >
+      <ThemedView style={[styles.detailsContainer]}>
         <ThemedText style={styles.detailText}>Book ID: {book.id}</ThemedText>
         <ThemedText style={styles.detailText}>Published: 2023</ThemedText>
         <ThemedText style={styles.detailText}>Pages: 320</ThemedText>
@@ -57,7 +51,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    alignItems: 'center',
+    alignItems: "center",
   },
   coverImage: {
     width: 200,
@@ -66,24 +60,25 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   placeholderImage: {
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   title: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 8,
-    textAlign: 'center',
+    textAlign: "center",
   },
   author: {
     fontSize: 18,
     marginBottom: 20,
   },
   detailsContainer: {
-    width: '100%',
+    width: "100%",
     marginTop: 20,
     padding: 15,
     borderRadius: 10,
+    backgroundColor: "#202020",
   },
   detailText: {
     fontSize: 16,

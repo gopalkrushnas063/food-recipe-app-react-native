@@ -1,5 +1,5 @@
-import { Stack } from 'expo-router';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from "@/context/ThemeContext";
+import { Stack } from "expo-router";
 
 export default function HomeLayout() {
   const { colors } = useTheme();
@@ -16,18 +16,19 @@ export default function HomeLayout() {
         headerTintColor: colors.text,
       }}
     >
-      <Stack.Screen 
-        name="index" 
-        options={{ 
-          headerShown: false 
-        }} 
+      <Stack.Screen
+        name="index"
+        options={{
+          headerShown: false,
+        }}
       />
-      <Stack.Screen 
-        name="[id]" 
-        options={{ 
-          title: 'Book Details',
-          headerBackTitle: 'Back',
-        }} 
+      <Stack.Screen
+        name="[id]"
+        options={{
+          title: "Book Details",
+          headerBackTitle: "Back",
+          headerBackVisible: true, // Optional, default is true
+        }}
       />
     </Stack>
   );
